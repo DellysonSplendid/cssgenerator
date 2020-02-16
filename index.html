@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Generate HEX-COLOR</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <section>
+          <h1>Generate HEX Color</h1>
+          <button id="shuffleBtn">Generate Color(HEX)</button>
+        </section>
+
+        <section>
+          <h1>Generate border Radius</h1>
+          <input type="range" id="range" />
+        </section>
+        <section>
+          <h1>Generate Box Shadow</h1>
+          <label>X-AXIS</label>
+          <input
+            type="text"
+            class="box-shadow-first"
+            placeholder="value measured in px"
+          />
+
+          <label>Y-AXIS</label>
+          <input
+            type="text"
+            class="box-shadow-second"
+            placeholder="value measured in px"
+          />
+          <label for="blur">BLUR:</label> <br />
+          <input type="range" id="blur" value="0" />
+
+          <label for="spread">SPREAD:</label>
+          <input type="range" id="spread" value="0" />
+
+          <input
+            type="text"
+            class="box-shadow-color"
+            placeholder=" border color (HEX value)"
+          />
+          <input type="button" value="GENERATE" id="genShad" />
+        </section>
+        <section>
+          <h1>Generate Border</h1>
+          <label for="border-style">Border Style:</label>
+          <select id="border-style">
+            <option value="solid">solid</option>
+            <option value="dashed">dashed</option>
+            <option value="ridge">ridge</option>
+            <option value="groove">groove</option>
+            <option value="inset">inset</option>
+            <option value="outset">outset</option>
+          </select>
+          <label for="border-size">Border Size:</label>
+          <input
+            type="text"
+            id="border-size"
+            placeholder="value measured in px"
+          />
+          <label for="border-color">Border Color:</label>
+          <input
+            type="text"
+            id="border-color"
+            placeholder="color in HEX value"
+          />
+          <input type="button" value="GENERATE" id="genBorder" />
+        </section>
+      </div>
+
+      <div class="output-area">
+        <div class="output"></div>
+        <div class="styles">
+          <p class="color"></p>
+          <p class="border-radius"></p>
+          <p class="box-shadow"></p>
+          <p class="border"></p>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
