@@ -72,6 +72,15 @@
           />
           <input type="button" value="GENERATE" id="genBorder" />
         </section>
+
+        <section>
+          <label for="translate-x">Translate X:</label>
+          <input type="range" id="translate-x" min="-50" max="50" value="0" />
+          <label for="translate-y">Translate Y:</label>
+          <input type="range" id="translate-y" min="-50" max="50" value="0" />
+          <label for="scale">Scale:</label>
+          <input type="range" id="scale" max="20" />
+        </section>
       </div>
 
       <div class="output-area">
@@ -81,6 +90,7 @@
           <p class="border-radius"></p>
           <p class="box-shadow"></p>
           <p class="border"></p>
+          <p class="transform"></p>
         </div>
       </div>
     </div>

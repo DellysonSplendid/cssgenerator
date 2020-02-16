@@ -1,73 +1,107 @@
 // console.log(alphaNumerics.shuffle())
 let output = document.querySelector(".output");
 let range = document.querySelector("#range");
-
-
-document.addEventListener("click", function (e) {
-
-    if (!e.target.matches("#shuffleBtn")) return false;
-    randomString(6, 'abcd01234efgh56789');
+let transform = document.querySelector(".transform");
+document.addEventListener("click", function(e) {
+  if (!e.target.matches("#shuffleBtn")) return false;
+  randomColor(6, "abcd01234efgh56789");
 });
-
-function randomString(length, chars) {
-    let color = document.querySelector(".color");
-    let output = document.querySelector(".output");
-    var result = '';
-    for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
-    color.textContent = `color: #${result}`;
-    output.style.backgroundColor = `#${result}`;
-    output.textContent = `#${result}`
-};
-
-
-
-document.addEventListener("click", function (e) {
-    var boxShadowFirst = document.querySelector(".box-shadow-first").value;
-    var boxShadowSecond = document.querySelector(".box-shadow-second").value;
-    var boxShadowColor = document.querySelector(".box-shadow-color").value;
-    let blur = document.getElementById("blur").value;
-    let spread = document.getElementById("spread").value;
-    var boxShadow = document.querySelector(".box-shadow");
-    if (!e.target.matches("#genShad")) return false;
-    if (e.target.value == "GENERATE") {
-        e.target.value == "UPDATE";
-    } else {
-        e.target.value == "GENERATE";
-    }
-    output.textContent = `Box Shadow: ${boxShadowFirst}px ${boxShadowSecond}px  ${ blur }px ${spread}px`
-    boxShadow.textContent = `box-shadow: ${boxShadowFirst}px ${boxShadowSecond}px  ${ blur }px ${spread}px #${boxShadowColor}`
-    output.style.boxShadow = `
-    ${boxShadowFirst}px 
-    ${boxShadowSecond}px
-    ${blur }px
-     ${ spread }px
-    #${boxShadowColor }
-    `;
-    console.log(`box-shadow: ${boxShadowFirst}px ${boxShadowSecond}px  ${ blur }px ${spread}px`);
-
-});
-
+function randomColor(length, chars) {
+  let color = document.querySelector(".color");
+  let output = document.querySelector(".output");
+  var result = "";
+  for (var i = length; i > 0; --i)
+    result += chars[Math.round(Math.random() * (chars.length - 1))];
+  color.textContent = `color: #${result}`;
+  output.style.backgroundColor = `#${result}`;
+  output.textContent = `#${result}`;
+}
 
 // set the initial value of range to zero
 
-range.value = 0;;
-document.addEventListener("change", function (e) {
-    let output = document.querySelector(".output");
-    let borderRadius = document.querySelector(".border-radius");
-    if (!e.target.matches("#range")) return false;
-    output.style.borderRadius = `${range.value}%`;
-    output.textContent = `${range.value}%`
-    borderRadius.textContent = ` border-radius: ${range.value}%`;
-});
-document.addEventListener("click", function (e) {
-    if (!e.target.matches("#genBorder")) return false;
-    let borderStyle = document.getElementById("border-style").value;
-    let borderSize = document.getElementById("border-size").value;
-    let borderColor = document.getElementById("border-color").value;
-    let border = document.querySelector(".border");
-    console.log(borderStyle, borderSize, borderColor);
-    output.style.border = `${borderStyle} ${borderSize}px #${borderColor}`;
-    output.textContent = `${borderStyle} ${borderSize}px #${borderColor}`
-    border.textContent = ` border: ${borderStyle} ${borderSize}px #${borderColor}%`;
+range.value = 0;
 
-})
+function generateBorderRadius() {
+  let output = document.querySelector(".output");
+  let borderRadius = document.querySelector(".border-radius");
+  output.style.borderRadius = `${range.value}%`;
+  output.textContent = `${range.value}%`;
+  borderRadius.textContent = ` border-radius: ${range.value}%`;
+}
+
+function generateBoxShadow() {
+  var boxShadowFirst = document.querySelector(".box-shadow-first").value;
+  var boxShadowSecond = document.querySelector(".box-shadow-second").value;
+  var boxShadowColor = document.querySelector(".box-shadow-color").value;
+  let blur = document.getElementById("blur").value;
+  let spread = document.getElementById("spread").value;
+  var boxShadow = document.querySelector(".box-shadow");
+  output.textContent = `Box Shadow: ${boxShadowFirst}px ${boxShadowSecond}px  ${blur}px ${spread}px`;
+  boxShadow.textContent = `box-shadow: ${boxShadowFirst}px ${boxShadowSecond}px  ${blur}px ${spread}px #${boxShadowColor}`;
+  output.style.boxShadow = `
+    ${boxShadowFirst}px 
+    ${boxShadowSecond}px
+    ${blur}px
+     ${spread}px
+    #${boxShadowColor}
+    `;
+  console.log(
+    `box-shadow: ${boxShadowFirst}px ${boxShadowSecond}px  ${blur}px ${spread}px`
+  );
+}
+function generateBorder() {
+  let borderStyle = document.getElementById("border-style").value;
+  let borderSize = document.getElementById("border-size").value;
+  let borderColor = document.getElementById("border-color").value;
+  let border = document.querySelector(".border");
+  console.log(borderStyle, borderSize, borderColor);
+  output.style.border = `${borderStyle} ${borderSize}px #${borderColor}`;
+  border.textContent = ` border: ${borderStyle} ${borderSize}px #${borderColor}%`;
+}
+
+function translateX() {
+  let translateX = document.getElementById("translate-x").value;
+  console.log(translateX);
+  output.style.transform = `translateX(${translateX}px)`;
+  transform.textContent = ` transform: translateX(${translateX}px)`;
+}
+function translateY() {
+  let translateY = document.getElementById("translate-y").value;
+  console.log(translateY);
+  output.style.transform = `translateY(${translateY}px)`;
+  transform.textContent = ` transform: translateY(${translateY}px)`;
+}
+function genBoxShadow() {}
+function scale() {
+  let scale = document.getElementById("scale").value / 10;
+  console.log(scale);
+  output.style.transform = `scale(${scale})`;
+  transform.textContent = ` transform: scale(${scale})`;
+}
+
+document.addEventListener("change", function(e) {
+  if (!e.target.matches("#range")) return false;
+
+  generateBorderRadius();
+});
+document.addEventListener("click", function(e) {
+  if (!e.target.matches("#genBorder")) return false;
+  generateBorder();
+});
+
+document.addEventListener("change", function(e) {
+  if (!e.target.matches("#translate-x")) return false;
+  translateX();
+});
+document.addEventListener("change", function(e) {
+  if (!e.target.matches("#translate-y")) return false;
+  translateY();
+});
+document.addEventListener("change", function(e) {
+  if (!e.target.matches("#scale")) return false;
+  scale();
+});
+document.addEventListener("click", function(e) {
+  if (!e.target.matches("#genShad")) return false;
+  generateBoxShadow();
+});
