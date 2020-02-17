@@ -10,9 +10,27 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+nav {
+    width: 100%;
+
+    margin: 0;
+    position: relative;
+}
+
+nav h1 {
+    margin: 0;
+    padding: 2rem;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgb(232, 246, 232);
+}
+
 .container {
-    max-width: 70%;
+    max-width: 80%;
     margin: 0 auto;
+    padding-top: 6rem;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -21,6 +39,14 @@ body {
 h1 {
     font-style: normal;
     font-weight: 500;
+    color: rgb(62, 177, 177)
+}
+
+.output-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .output {
@@ -37,26 +63,37 @@ h1 {
 .styles {
     margin-top: 5rem;
     width: 100%;
-    background-color: rgb(196, 196, 196);
+    background-color: rgb(230, 230, 230);
     padding: 2rem;
-    font-family: monospace;
+    font-family: monospace, cursive;
 
 }
 
-section {
-    width: 100%;
-}
-
-.row {
+.input-control {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    margin-bottom: 1rem;
+
+}
+
+label {
+    padding-right: 1rem;
 }
 
 input,
-button,
 select {
+    margin-right: .8rem;
+}
+
+.transform-prop input {
+    width: 100%;
+}
+
+section:not(:last-child) {
+    margin-bottom: 3rem;
+}
+
+button {
     width: 100%;
     display: block;
     margin: 1.2rem;
@@ -79,4 +116,16 @@ select {
     height: 30px;
     outline: none;
     border: 1px rgb(62, 177, 177) solid;
+}
+
+footer {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+footer h3 {
+    text-align: center;
+    background-color: papayawhip;
+    margin: 0;
+    padding: 2rem;
 }

@@ -71,7 +71,7 @@ function translateY() {
   output.style.transform = `translateY(${translateY}px)`;
   transform.textContent = ` transform: translateY(${translateY}px)`;
 }
-function genBoxShadow() {}
+
 function scale() {
   let scale = document.getElementById("scale").value / 10;
   console.log(scale);
@@ -79,6 +79,11 @@ function scale() {
   transform.textContent = ` transform: scale(${scale})`;
 }
 
+function rotate() {
+  let rotate = document.getElementById("rotate").value;
+  output.style.transform = `rotate(${rotate}deg)`;
+  transform.textContent = ` transform: rotate(${rotate}deg)`;
+}
 document.addEventListener("change", function(e) {
   if (!e.target.matches("#range")) return false;
 
@@ -100,6 +105,10 @@ document.addEventListener("change", function(e) {
 document.addEventListener("change", function(e) {
   if (!e.target.matches("#scale")) return false;
   scale();
+});
+document.addEventListener("change", function(e) {
+  if (!e.target.matches("#rotate")) return false;
+  rotate();
 });
 document.addEventListener("click", function(e) {
   if (!e.target.matches("#genShad")) return false;

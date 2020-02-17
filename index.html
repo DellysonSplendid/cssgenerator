@@ -8,78 +8,107 @@
     <title>Generate HEX-COLOR</title>
   </head>
   <body>
+    <nav>
+      <h1>CSS GENERATOR TOOL</h1>
+    </nav>
     <div class="container">
       <div class="row">
-        <section>
+        <section class="color-props">
           <h1>Generate HEX Color</h1>
           <button id="shuffleBtn">Generate Color(HEX)</button>
         </section>
 
-        <section>
+        <section class="border-radius-props">
           <h1>Generate border Radius</h1>
-          <input type="range" id="range" />
+          <input type="range" id="range" min="0" max="50" />
         </section>
-        <section>
+        <section class="box-shadow-props">
           <h1>Generate Box Shadow</h1>
-          <label>X-AXIS</label>
-          <input
-            type="text"
-            class="box-shadow-first"
-            placeholder="value measured in px"
-          />
-
-          <label>Y-AXIS</label>
-          <input
-            type="text"
-            class="box-shadow-second"
-            placeholder="value measured in px"
-          />
-          <label for="blur">BLUR:</label> <br />
-          <input type="range" id="blur" value="0" />
-
-          <label for="spread">SPREAD:</label>
-          <input type="range" id="spread" value="0" />
-
-          <input
-            type="text"
-            class="box-shadow-color"
-            placeholder=" border color (HEX value)"
-          />
-          <input type="button" value="GENERATE" id="genShad" />
+          <div class="input-control">
+            <label>X-AXIS</label>
+            <input
+              type="text"
+              class="box-shadow-first"
+              placeholder="value measured in px"
+            />
+          </div>
+          <div class="input-control">
+            <label>Y-AXIS</label>
+            <input
+              type="text"
+              class="box-shadow-second"
+              placeholder="value measured in px"
+            />
+          </div>
+          <div class="input-control">
+            <label for="blur">BLUR:</label>
+            <input type="range" id="blur" value="0" />
+          </div>
+          <div class="input-control">
+            <label for="spread">SPREAD:</label>
+            <input type="range" id="spread" value="0" />
+          </div>
+          <div class="input-control">
+            <label for="color">Box-Shadow Color:</label>
+            <input
+              type="text"
+              class="box-shadow-color"
+              placeholder=" border color (HEX value)"
+            />
+          </div>
+          <button id="genShad">GENERATE</button>
         </section>
-        <section>
+        <section class="border-prop">
           <h1>Generate Border</h1>
-          <label for="border-style">Border Style:</label>
-          <select id="border-style">
-            <option value="solid">solid</option>
-            <option value="dashed">dashed</option>
-            <option value="ridge">ridge</option>
-            <option value="groove">groove</option>
-            <option value="inset">inset</option>
-            <option value="outset">outset</option>
-          </select>
-          <label for="border-size">Border Size:</label>
-          <input
-            type="text"
-            id="border-size"
-            placeholder="value measured in px"
-          />
-          <label for="border-color">Border Color:</label>
-          <input
-            type="text"
-            id="border-color"
-            placeholder="color in HEX value"
-          />
-          <input type="button" value="GENERATE" id="genBorder" />
+          <div class="input-control">
+            <label for="border-style">Border Style:</label>
+            <select id="border-style">
+              <option value="solid">solid</option>
+              <option value="dashed">dashed</option>
+              <option value="ridge">ridge</option>
+              <option value="groove">groove</option>
+              <option value="inset">inset</option>
+              <option value="outset">outset</option>
+            </select>
+          </div>
+          <div class="input-control">
+            <label for="border-size">Border Size:</label>
+            <input
+              type="text"
+              id="border-size"
+              placeholder="value measured in px"
+            />
+          </div>
+          <div class="input-control">
+            <label for="border-color">Border Color:</label>
+            <input
+              type="text"
+              id="border-color"
+              placeholder="color in HEX value"
+            />
+          </div>
+          <button id="genBorder">GENERATE</button>
         </section>
 
-        <section>
-          <label for="translate-x">Translate X:</label>
-          <input type="range" id="translate-x" min="-50" max="50" value="0" />
-          <label for="translate-y">Translate Y:</label>
-          <input type="range" id="translate-y" min="-50" max="50" value="0" />
-          <label for="scale">Scale:</label>
-          <input type="range" id="scale" max="20" />
+        <section class="transform-prop">
+          <h1>Generate Transform Properties</h1>
+
+          <div class="input-control">
+            <label for="translate-x">Translate X:</label>
+            <input type="range" id="translate-x" min="-50" max="50" value="0" />
+          </div>
+          <div class="input-control">
+            <label for="translate-y">Translate Y:</label>
+            <input type="range" id="translate-y" min="-50" max="50" value="0" />
+          </div>
+          <div class="input-control">
+            <label for="scale">Scale:</label>
+            <input type="range" id="scale" max="20" />
+          </div>
+          <div class="input-control">
+            <label for="rotate">Rotate:</label>
+            <input type="range" id="rotate" value="0" min="0" max="360" />
+          </div>
         </section>
       </div>
 
@@ -94,6 +123,9 @@
         </div>
       </div>
     </div>
+    <footer>
+      <h3>Made with ❤ by Isiaka Lukman &copy; 2020</h3>
+    </footer>
     <script src="main.js"></script>
   </body>
 </html>

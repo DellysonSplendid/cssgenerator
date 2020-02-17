@@ -4,6 +4,7 @@
 - Border Radius
 - Border
 - Box Shadow etc.
+- CSS Transform (rotate, translateX, translateY, scal) etc.
 
 No external libraries used.
 To contribute, Clone the repo and send a PR.
