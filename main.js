@@ -35,6 +35,16 @@ function generateBoxShadow() {
   var boxShadowColor = document.querySelector(".box-shadow-color").value;
   let blur = document.getElementById("blur").value;
   let spread = document.getElementById("spread").value;
+
+  if (
+    boxShadowFirst === "" ||
+    boxShadowSecond === "" ||
+    boxShadowColor === "" ||
+    boxShadowColor.length < 0
+  ) {
+    alert("All inputs are required!");
+    return false;
+  }
   var boxShadow = document.querySelector(".box-shadow");
   output.textContent = `Box Shadow: ${boxShadowFirst}px ${boxShadowSecond}px  ${blur}px ${spread}px`;
   boxShadow.textContent = `box-shadow: ${boxShadowFirst}px ${boxShadowSecond}px  ${blur}px ${spread}px #${boxShadowColor}`;
@@ -45,15 +55,19 @@ function generateBoxShadow() {
      ${spread}px
     #${boxShadowColor}
     `;
-  console.log(
-    `box-shadow: ${boxShadowFirst}px ${boxShadowSecond}px  ${blur}px ${spread}px`
-  );
 }
 function generateBorder() {
   let borderStyle = document.getElementById("border-style").value;
   let borderSize = document.getElementById("border-size").value;
   let borderColor = document.getElementById("border-color").value;
   let border = document.querySelector(".border");
+  if (borderSize === "" || borderStyle === "" || borderColor === "") {
+    alert("All inputs are required!");
+    return false;
+  }
+  if (borderColor == "" || borderColor.length < 0 || borderColor.length < 6) {
+    alert("All inputs are required!");
+  }
   console.log(borderStyle, borderSize, borderColor);
   output.style.border = `${borderStyle} ${borderSize}px #${borderColor}`;
   border.textContent = ` border: ${borderStyle} ${borderSize}px #${borderColor}%`;
@@ -76,7 +90,7 @@ function scale() {
   let scale = document.getElementById("scale").value / 10;
   console.log(scale);
   output.style.transform = `scale(${scale})`;
-  transform.textContent = ` transform: scale(${scale})`;
+  transform.textContent = ` transform:scale(${scale})`;
 }
 
 function rotate() {
@@ -84,6 +98,13 @@ function rotate() {
   output.style.transform = `rotate(${rotate}deg)`;
   transform.textContent = ` transform: rotate(${rotate}deg)`;
 }
+
+document.addEventListener("DOMContentLoaded", function(e) {
+  setTimeout(function() {
+    document.querySelector(".side-note").style.display = "none";
+  }, 10000);
+});
+
 document.addEventListener("change", function(e) {
   if (!e.target.matches("#range")) return false;
 
