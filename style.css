@@ -121,7 +121,7 @@ select {
   position: fixed;
   left: 0;
   top: 10%;
-  width: 1000%;
+  width: 100%;
   background: rgb(62, 177, 177);
 }
 
@@ -129,17 +129,6 @@ select {
   padding: 1rem;
   font-size: 0.9rem;
   color: #f0f0f0;
-}
-
-.note-button {
-  visibility: hidden;
-  position: fixed;
-  background-color: #a0c4da;
-  top: 30%;
-}
-
-.note-button #toggle {
-  padding: 0.5rem;
 }
 
 footer {
@@ -153,21 +142,16 @@ footer h3 {
   margin: 0;
   padding: 2rem;
 }
+#top {
+  position: fixed;
+  bottom: 12%;
+  right: 0;
+  padding: 1rem;
+}
 
 @media (max-width: 900px) {
   .container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
-  }
-
-  .side-note {
-    left: -100%;
-  }
-  .show {
-    left: 0;
-  }
-
-  .note-button {
-    visibility: visible;
   }
 }

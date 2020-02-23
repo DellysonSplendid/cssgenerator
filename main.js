@@ -40,7 +40,8 @@ function generateBoxShadow() {
     boxShadowFirst === "" ||
     boxShadowSecond === "" ||
     boxShadowColor === "" ||
-    boxShadowColor.length < 0
+    boxShadowColor.length < 0 ||
+    boxShadowColor.length > 6
   ) {
     alert("All inputs are required!");
     return false;
